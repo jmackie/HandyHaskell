@@ -64,5 +64,4 @@ main = Test.hspec $ do
         Test.it "works fine for unicode" $ do
             decode helloUtf8 `Test.shouldBe` Right "你好世界"
         Test.it "indicates bad unicode via Left value" $ do
-            decode helloUtf8 `Test.shouldBe` Right "你好世界"
             decode helloInvalidUtf8 `Test.shouldSatisfy` isLeft
